@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectName": "Canary Missing File",
+  "repository": "AIAllTheThingz/Engineering-Standards-Canary",
+  "description": "Synthetic non-production fixture proving required downstream documentation fails closed.",
+  "projectType": "integration",
+  "technologies": ["integration", "github-actions"],
+  "governanceVersion": "1.1.0",
+  "riskClassification": "Moderate",
+  "dataClassification": "Public",
+  "owners": ["@AIAllTheThingz/engineering-standards-maintainers"],
+  "environments": [{"name": "canary", "type": "test", "production": false}],
+  "applicableStandards": ["agents/AGENTS_Base.md", "agents/AGENTS_Integration.md"],
+  "requiredWorkflows": ["governance"],
+  "externalIntegrations": [],
+  "secretsProvider": "none-required",
+  "productionApprovalRequired": false,
+  "evidence": {
+    "completionEvidencePath": "evidence/completion-result.json",
+    "testEvidencePath": "evidence/ci-test-results.json"
+  },
+  "exceptions": []
+}

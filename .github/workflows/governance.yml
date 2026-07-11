@@ -1,0 +1,101 @@
+name: Downstream Governance Canary
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      scenario:
+        description: Synthetic canary scenario to execute.
+        type: choice
+        required: true
+        default: success
+        options:
+          - success
+          - controlled-failure
+          - governance-version-mismatch
+          - missing-required-file
+          - mandatory-control-disablement
+
+permissions:
+  contents: read
+
+jobs:
+  repository_shape:
+    name: Repository shape
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout canary
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+        with:
+          persist-credentials: false
+
+      - name: Prove central implementation directories are absent
+        shell: bash
+        run: |
+          set -euo pipefail
+          for forbidden in scripts actions tests examples; do
+            if git ls-tree -d -r --name-only HEAD |
+              awk -F/ -v name="${forbidden}" '$NF == name { found=1 } END { exit !found }'
+            then
+              echo "Forbidden copied central directory found: ${forbidden}" >&2
+              exit 1
+            fi
+          done
+          echo "No copied central implementation directories are present."
+
+  success:
+    name: Governance success
+    if: ${{ github.event_name != 'workflow_dispatch' || inputs.scenario == 'success' }}
+    needs: repository_shape
+    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/governance-ci-reusable.yml@091841c94fba6039443a40b7c4a28e5b9a3af2d2
+    with:
+      project-path: .
+      governance-version: 1.1.0
+      artifact-retention-days: 30
+
+  controlled_failure:
+    name: Controlled failure
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.scenario == 'controlled-failure' }}
+    needs: repository_shape
+    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/governance-ci-reusable.yml@091841c94fba6039443a40b7c4a28e5b9a3af2d2
+    with:
+      project-path: .
+      governance-version: 1.1.0
+      artifact-retention-days: 30
+      controlled-failure-test: true
+
+  governance_version_mismatch:
+    name: Governance version mismatch
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.scenario == 'governance-version-mismatch' }}
+    needs: repository_shape
+    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/governance-ci-reusable.yml@091841c94fba6039443a40b7c4a28e5b9a3af2d2
+    with:
+      project-path: .
+      governance-version: 1.0.0
+      artifact-retention-days: 30
+
+  missing_required_file:
+    name: Missing required file
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.scenario == 'missing-required-file' }}
+    needs: repository_shape
+    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/governance-ci-reusable.yml@091841c94fba6039443a40b7c4a28e5b9a3af2d2
+    with:
+      project-path: canary-scenarios/missing-required-file
+      governance-version: 1.1.0
+      artifact-retention-days: 30
+
+  mandatory_control_disablement:
+    name: Mandatory control disablement
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.scenario == 'mandatory-control-disablement' }}
+    needs: repository_shape
+    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/governance-ci-reusable.yml@091841c94fba6039443a40b7c4a28e5b9a3af2d2
+    with:
+      project-path: canary-scenarios/mandatory-control-disablement
+      governance-version: 1.1.0
+      artifact-retention-days: 30
