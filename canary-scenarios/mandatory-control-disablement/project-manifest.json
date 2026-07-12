@@ -8,7 +8,7 @@
   "governanceVersion": "1.1.0",
   "riskClassification": "Moderate",
   "dataClassification": "Public",
-  "owners": ["@AIAllTheThingz/engineering-standards-maintainers"],
+  "owners": ["aiallthethingz@gmail.com"],
   "environments": [{"name": "canary", "type": "test", "production": false}],
   "applicableStandards": ["agents/AGENTS_Base.md", "agents/AGENTS_Integration.md"],
   "requiredWorkflows": ["governance"],

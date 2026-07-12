@@ -15,11 +15,12 @@ scenarios run only through a closed `workflow_dispatch` choice.
 
 The workflow is pinned to:
 
-`091841c94fba6039443a40b7c4a28e5b9a3af2d2`
+`de32b77e2043f5336a54b92ab9ed867abe93ba7e`
 
-That SHA is the authoritative merge commit for Engineering Standards PR #29.
-Moving branches, tags, shortened SHAs, and caller-selected standards references
-are not permitted.
+That SHA is the reviewed Issue #16 correction candidate on Engineering
+Standards PR #31. It becomes authoritative only after protected review and
+merge. Moving branches, tags, shortened SHAs, and caller-selected standards
+references are not permitted.
 
 ## Validation
 

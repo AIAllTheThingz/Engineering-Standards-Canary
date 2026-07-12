@@ -57,6 +57,9 @@ Download artifacts into isolated temporary directories. Use the central
 Standards checkout to verify identity, conclusion, referenced hashes and sizes,
 path safety, credential patterns, and unexpected executable files.
 
+For every negative scenario, confirm the downloaded artifact itself contains
+the exact sanitized diagnostic. Workflow logs alone are not acceptance evidence.
+
 At minimum, independently verify success and controlled-failure artifacts.
 Negative artifacts should also be inspected when retained.
 
@@ -67,10 +70,13 @@ exact reviewed 40-character candidate SHA, open a canary pull request, and run
 all five scenarios. Record the resulting evidence in the Engineering Standards
 release pull request.
 
-A governance workflow release is blocked unless this external canary succeeds
-against the exact candidate SHA and the controlled and policy-negative scenarios
-fail for their intended reasons. Never substitute a moving branch, tag, local
-fixture, or same-repository self-CI run for this gate.
+A release that modifies the reusable governance workflow, its public downstream
+interface, or an authoritative reusable-workflow pin is blocked unless this
+external canary succeeds against the exact candidate SHA and the controlled and
+policy-negative scenarios fail for their intended reasons. Documentation-,
+policy-, schema-, or metadata-only releases that do not change those workflow
+surfaces do not require a new canary run. Never substitute a moving branch, tag,
+local fixture, or same-repository self-CI run for the required gate.
 
 ## Troubleshooting
 

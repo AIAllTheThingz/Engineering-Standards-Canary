@@ -12,7 +12,7 @@
   "riskClassification": "Moderate",
   "dataClassification": "Public",
   "owners": [
-    "@AIAllTheThingz/engineering-standards-maintainers"
+    "aiallthethingz@gmail.com"
   ],
   "environments": [
     {
