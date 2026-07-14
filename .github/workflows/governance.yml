@@ -53,7 +53,7 @@ jobs:
     name: Governance success
     if: ${{ github.event_name != 'workflow_dispatch' || inputs.scenario == 'success' }}
     needs: repository_shape
-    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/governance-ci-reusable.yml@d0387721a40213d4d38fe5a54c2bdfaf68f92a85
+    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/governance-ci-reusable.yml@5450976a4cf02661854df24f4427082242821edd
     with:
       project-path: .
       governance-version: 1.1.0
@@ -63,7 +63,7 @@ jobs:
     name: Controlled failure
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.scenario == 'controlled-failure' }}
     needs: repository_shape
-    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/governance-ci-reusable.yml@d0387721a40213d4d38fe5a54c2bdfaf68f92a85
+    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/governance-ci-reusable.yml@5450976a4cf02661854df24f4427082242821edd
     with:
       project-path: .
       governance-version: 1.1.0
@@ -74,7 +74,7 @@ jobs:
     name: Governance version mismatch
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.scenario == 'governance-version-mismatch' }}
     needs: repository_shape
-    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/governance-ci-reusable.yml@d0387721a40213d4d38fe5a54c2bdfaf68f92a85
+    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/governance-ci-reusable.yml@5450976a4cf02661854df24f4427082242821edd
     with:
       project-path: .
       governance-version: 1.0.0
@@ -84,7 +84,7 @@ jobs:
     name: Missing required file
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.scenario == 'missing-required-file' }}
     needs: repository_shape
-    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/governance-ci-reusable.yml@d0387721a40213d4d38fe5a54c2bdfaf68f92a85
+    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/governance-ci-reusable.yml@5450976a4cf02661854df24f4427082242821edd
     with:
       project-path: canary-scenarios/missing-required-file
       governance-version: 1.1.0
@@ -94,7 +94,7 @@ jobs:
     name: Mandatory control disablement
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.scenario == 'mandatory-control-disablement' }}
     needs: repository_shape
-    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/governance-ci-reusable.yml@d0387721a40213d4d38fe5a54c2bdfaf68f92a85
+    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/governance-ci-reusable.yml@5450976a4cf02661854df24f4427082242821edd
     with:
       project-path: canary-scenarios/mandatory-control-disablement
       governance-version: 1.1.0

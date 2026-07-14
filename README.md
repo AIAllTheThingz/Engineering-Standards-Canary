@@ -15,7 +15,7 @@ scenarios run only through a closed `workflow_dispatch` choice.
 
 The workflow is pinned to:
 
-`d0387721a40213d4d38fe5a54c2bdfaf68f92a85`
+`5450976a4cf02661854df24f4427082242821edd`
 
 That SHA is the Issue #21 correction candidate on Engineering Standards PR
 #36. It becomes authoritative only after protected review and
