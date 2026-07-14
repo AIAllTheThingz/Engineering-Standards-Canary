@@ -15,10 +15,10 @@ scenarios run only through a closed `workflow_dispatch` choice.
 
 The workflow is pinned to:
 
-`de32b77e2043f5336a54b92ab9ed867abe93ba7e`
+`d276f73886d0c83f099911aeb09cf924673bd8aa`
 
-That SHA is the reviewed Issue #16 correction candidate on Engineering
-Standards PR #31. It becomes authoritative only after protected review and
+That SHA is the Issue #21 correction candidate on Engineering Standards PR
+#36. It becomes authoritative only after protected review and
 merge. Moving branches, tags, shortened SHAs, and caller-selected standards
 references are not permitted.
 
