@@ -1,5 +1,8 @@
 # Engineering Standards Canary
 
+The root includes inert maintained Python source so the success scenario also
+proves trusted non-executing Python static analysis against the pinned candidate.
+
 This public, non-production repository is a real downstream consumer of the
 `AIAllTheThingz/Engineering-Standards` reusable governance workflow. It proves
 that central validators execute from an immutable Engineering Standards commit
