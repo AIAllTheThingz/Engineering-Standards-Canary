@@ -7,5 +7,7 @@ def canary_identity(candidate_sha: str) -> str:
         character not in "0123456789abcdef" for character in candidate_sha
     )
     if len(candidate_sha) != 40 or invalid_character:
-        raise ValueError("candidate SHA must be exactly 40 lowercase hexadecimal characters")
+        raise ValueError(
+            "candidate SHA must be exactly 40 lowercase hexadecimal characters"
+        )
     return candidate_sha

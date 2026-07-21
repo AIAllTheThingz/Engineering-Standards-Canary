@@ -56,7 +56,7 @@ jobs:
     name: Governance success
     if: ${{ github.event_name != 'workflow_dispatch' || inputs.scenario == 'success' }}
     needs: repository_shape
-    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/governance-ci-reusable.yml@97ad078e38e2edca948947c2439f0258453d9d44
+    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/governance-ci-reusable.yml@e19044f131f1dfe16d667b42429af7e06763892a
     with:
       project-path: .
       governance-version: 1.1.0
@@ -66,7 +66,7 @@ jobs:
     name: Controlled failure
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.scenario == 'controlled-failure' }}
     needs: repository_shape
-    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/governance-ci-reusable.yml@97ad078e38e2edca948947c2439f0258453d9d44
+    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/governance-ci-reusable.yml@e19044f131f1dfe16d667b42429af7e06763892a
     with:
       project-path: .
       governance-version: 1.1.0
@@ -77,7 +77,7 @@ jobs:
     name: Governance version mismatch
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.scenario == 'governance-version-mismatch' }}
     needs: repository_shape
-    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/governance-ci-reusable.yml@97ad078e38e2edca948947c2439f0258453d9d44
+    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/governance-ci-reusable.yml@e19044f131f1dfe16d667b42429af7e06763892a
     with:
       project-path: .
       governance-version: 1.0.0
@@ -87,7 +87,7 @@ jobs:
     name: Missing required file
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.scenario == 'missing-required-file' }}
     needs: repository_shape
-    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/governance-ci-reusable.yml@97ad078e38e2edca948947c2439f0258453d9d44
+    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/governance-ci-reusable.yml@e19044f131f1dfe16d667b42429af7e06763892a
     with:
       project-path: canary-scenarios/missing-required-file
       governance-version: 1.1.0
@@ -97,7 +97,7 @@ jobs:
     name: Mandatory control disablement
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.scenario == 'mandatory-control-disablement' }}
     needs: repository_shape
-    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/governance-ci-reusable.yml@97ad078e38e2edca948947c2439f0258453d9d44
+    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/governance-ci-reusable.yml@e19044f131f1dfe16d667b42429af7e06763892a
     with:
       project-path: canary-scenarios/mandatory-control-disablement
       governance-version: 1.1.0
@@ -107,7 +107,7 @@ jobs:
     name: Python functional success
     if: ${{ github.event_name != 'workflow_dispatch' || inputs.scenario == 'success' }}
     needs: repository_shape
-    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/python-ci-reusable.yml@97ad078e38e2edca948947c2439f0258453d9d44
+    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/python-ci-reusable.yml@e19044f131f1dfe16d667b42429af7e06763892a
     with:
       project-path: .
 
@@ -115,7 +115,7 @@ jobs:
     name: Python traversal rejection
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.scenario == 'python-traversal' }}
     needs: repository_shape
-    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/python-ci-reusable.yml@97ad078e38e2edca948947c2439f0258453d9d44
+    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/python-ci-reusable.yml@e19044f131f1dfe16d667b42429af7e06763892a
     with:
       project-path: ../
 
@@ -123,7 +123,7 @@ jobs:
     name: Python runtime tool substitution rejection
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.scenario == 'python-runtime-tool-substitution' }}
     needs: repository_shape
-    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/python-ci-reusable.yml@97ad078e38e2edca948947c2439f0258453d9d44
+    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/python-ci-reusable.yml@e19044f131f1dfe16d667b42429af7e06763892a
     with:
       project-path: python-scenarios/runtime-tool-substitution
 
@@ -131,6 +131,6 @@ jobs:
     name: Python malformed metadata rejection
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.scenario == 'python-malformed-metadata' }}
     needs: repository_shape
-    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/python-ci-reusable.yml@97ad078e38e2edca948947c2439f0258453d9d44
+    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/python-ci-reusable.yml@e19044f131f1dfe16d667b42429af7e06763892a
     with:
       project-path: python-scenarios/malformed-metadata

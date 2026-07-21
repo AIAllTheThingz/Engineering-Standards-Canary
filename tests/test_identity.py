@@ -1,7 +1,6 @@
 """Installed-wheel behavior tests."""
 
 import pytest
-
 from canary_identity import canary_identity
 
 
