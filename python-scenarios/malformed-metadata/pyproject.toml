@@ -1,0 +1,11 @@
+[build-system]
+requires = ["hatchling==1.31.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "malformed-metadata"
+version = "1.0.0"
+dependencies = []
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/malformed_metadata"]

@@ -1,0 +1,21 @@
+[build-system]
+requires = ["hatchling==1.31.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "engineering-standards-canary"
+version = "1.0.0"
+description = "Synthetic downstream package for governed Python canary validation"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+license = "MIT"
+dependencies = []
+
+[project.scripts]
+canary-identity = "canary_identity.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/canary_identity"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/canary_identity", "tests", "pyproject.toml", "README.md"]

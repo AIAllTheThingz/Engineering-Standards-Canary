@@ -1,4 +1,4 @@
-"""Inert maintained Python source for downstream static canary coverage."""
+"""Deterministic commit identity validation."""
 
 
 def canary_identity(candidate_sha: str) -> str:

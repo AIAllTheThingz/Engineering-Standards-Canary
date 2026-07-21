@@ -1,7 +1,11 @@
 # Engineering Standards Canary
 
-The root includes inert maintained Python source so the success scenario also
-proves trusted non-executing Python static analysis against the pinned candidate.
+The root contains a minimal generic Python distribution, installed-wheel tests,
+an optional console script, and inert caller packages named for every trusted
+validator module. The success scenario therefore proves both non-executing
+static analysis and the complete isolated Python functional workflow against the
+exact pinned candidate. Manually dispatched Python scenarios prove traversal,
+runtime-tool substitution, and malformed-metadata rejection.
 
 This public, non-production repository is a real downstream consumer of the
 `AIAllTheThingz/Engineering-Standards` reusable governance workflow. It proves

@@ -10,7 +10,8 @@
   ],
   "applicableAgentStandards": [
     "agents/AGENTS_Base.md",
-    "agents/AGENTS_Integration.md"
+    "agents/AGENTS_Integration.md",
+    "agents/AGENTS_Python.md"
   ],
   "validationCategories": [
     "Contract"

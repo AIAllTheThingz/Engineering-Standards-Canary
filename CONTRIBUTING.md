@@ -1,5 +1,9 @@
 # Contributing
 
+Python changes must keep the runtime dependency lock application-only and must
+not add validator packages. Validate both governance and Python functional jobs
+against the same exact Engineering Standards candidate SHA.
+
 Changes must preserve this repository as a minimal public downstream governance
 consumer. Keep normal pull-request and `main` validation passing, retain the
 immutable Engineering Standards workflow pin, and avoid copied central

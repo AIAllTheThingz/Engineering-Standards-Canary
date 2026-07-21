@@ -2,14 +2,17 @@
 
 This repository is a public, synthetic, non-production downstream governance
 consumer. It extends the central Engineering Standards
-`agents/AGENTS_Base.md` and `agents/AGENTS_Integration.md` requirements at
+`agents/AGENTS_Base.md`, `agents/AGENTS_Integration.md`, and
+`agents/AGENTS_Python.md` requirements at
 the immutable workflow revision recorded in
 `.github/workflows/governance.yml`.
 
 Agents must keep the repository free of secrets, production identifiers,
 customer data, endpoints, infrastructure, and copied central validator
 directories. Do not add top-level or nested directories named `scripts`,
-`actions`, `tests`, or `examples`.
+`actions`, `agents`, or `examples`. The root `tests/` directory and narrowly
+scoped `python-scenarios/*/tests/` directories are permitted only for the
+downstream Python package and controlled functional-negative fixtures.
 
 Workflow permissions must remain `contents: read`. Do not add secrets,
 environments, write permissions, `pull_request_target`, mutable workflow

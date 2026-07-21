@@ -3,8 +3,19 @@
   "projectName": "Engineering Standards Canary",
   "repository": "AIAllTheThingz/Engineering-Standards-Canary",
   "description": "Public non-production downstream integration canary for the immutable Engineering Standards reusable governance workflow.",
-  "projectType": "integration",
+  "projectType": "python",
+  "pythonProject": {
+    "distributionName": "engineering-standards-canary",
+    "importName": "canary_identity",
+    "version": "1.0.0",
+    "consoleScript": "canary-identity",
+    "runtimeDependencyLock": "requirements-runtime.lock",
+    "buildBackend": "hatchling.build",
+    "buildBackendVersion": "1.31.0",
+    "license": "MIT"
+  },
   "technologies": [
+    "python",
     "integration",
     "github-actions"
   ],
@@ -23,10 +34,12 @@
   ],
   "applicableStandards": [
     "agents/AGENTS_Base.md",
-    "agents/AGENTS_Integration.md"
+    "agents/AGENTS_Integration.md",
+    "agents/AGENTS_Python.md"
   ],
   "requiredWorkflows": [
-    "governance"
+    "governance",
+    "python"
   ],
   "externalIntegrations": [],
   "secretsProvider": "none-required",

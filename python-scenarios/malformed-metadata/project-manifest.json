@@ -1,0 +1,12 @@
+{
+  "projectType": "python",
+  "pythonProject": {
+    "distributionName": "../../malformed",
+    "importName": "malformed_metadata",
+    "version": "1.0.0",
+    "runtimeDependencyLock": "requirements-runtime.lock",
+    "buildBackend": "hatchling.build",
+    "buildBackendVersion": "1.31.0",
+    "license": "MIT"
+  }
+}
