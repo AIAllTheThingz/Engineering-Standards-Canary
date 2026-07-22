@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+set -u -o pipefail
+
+main() {
+  if (($# != 1)); then
+    printf 'usage: echo-value VALUE\n' >&2
+    return 64
+  fi
+
+  local script_directory
+  script_directory=$(
+    unset CDPATH
+    cd -- "${BASH_SOURCE[0]%/*}" && pwd -P
+  ) || return 70
+  source "$script_directory/../lib/canary_value.sh"
+  canary_print_value "$1"
+}
+
+main "$@"
