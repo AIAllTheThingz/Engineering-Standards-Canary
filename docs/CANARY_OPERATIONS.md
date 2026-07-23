@@ -73,7 +73,7 @@ only `success`; a manual dispatch selects exactly one scenario:
 - `shellcheck-failure`: ShellCheck alone fails and Bats is `NotRun`.
 - `format-failure`: shfmt alone fails and Bats is `NotRun`.
 - `bats-failure`: syntax, ShellCheck, and shfmt pass before one Bats assertion fails.
-- `caller-config-bypass`: caller `.shellcheckrc` and `.editorconfig` attempts are ignored by explicit trusted options and the project passes.
+- `caller-config-bypass`: a caller `.shellcheckrc` tries to suppress an SC2034 finding that ShellCheck reads from governed source; trusted settings remain authoritative, ShellCheck fails, formatting passes, and Bats is `NotRun`.
 
 Run a scenario with:
 

@@ -1,1 +1,1 @@
-caller-config-must-not-be-read
+disable=SC2034
