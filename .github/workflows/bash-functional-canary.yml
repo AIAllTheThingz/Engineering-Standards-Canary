@@ -26,34 +26,34 @@ jobs:
   success:
     name: Bash success
     if: ${{ github.event_name != 'workflow_dispatch' || inputs.scenario == 'success' }}
-    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/bash-ci-reusable.yml@a084f172c4a40d48eee2363723f43aa2339d0146
+    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/bash-ci-reusable.yml@901389b9f307d7007930a40ebf1d24be07a472f2
     with:
       project-path: bash-functional
 
   shellcheck_failure:
     name: ShellCheck failure
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.scenario == 'shellcheck-failure' }}
-    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/bash-ci-reusable.yml@a084f172c4a40d48eee2363723f43aa2339d0146
+    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/bash-ci-reusable.yml@901389b9f307d7007930a40ebf1d24be07a472f2
     with:
       project-path: bash-functional-scenarios/shellcheck-failure
 
   format_failure:
     name: Formatting failure
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.scenario == 'format-failure' }}
-    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/bash-ci-reusable.yml@a084f172c4a40d48eee2363723f43aa2339d0146
+    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/bash-ci-reusable.yml@901389b9f307d7007930a40ebf1d24be07a472f2
     with:
       project-path: bash-functional-scenarios/format-failure
 
   bats_failure:
     name: Bats failure
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.scenario == 'bats-failure' }}
-    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/bash-ci-reusable.yml@a084f172c4a40d48eee2363723f43aa2339d0146
+    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/bash-ci-reusable.yml@901389b9f307d7007930a40ebf1d24be07a472f2
     with:
       project-path: bash-functional-scenarios/bats-failure
 
   caller_config_bypass:
     name: Caller configuration bypass
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.scenario == 'caller-config-bypass' }}
-    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/bash-ci-reusable.yml@a084f172c4a40d48eee2363723f43aa2339d0146
+    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/bash-ci-reusable.yml@901389b9f307d7007930a40ebf1d24be07a472f2
     with:
       project-path: bash-functional-scenarios/caller-config-bypass
