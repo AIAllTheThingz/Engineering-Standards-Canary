@@ -11,6 +11,12 @@ endpoints, infrastructure, customer data, environments, or secrets. Its normal
 pull-request and `main` workflows are expected to pass. Deliberate negative
 scenarios run only through a closed `workflow_dispatch` choice.
 
+The separate Bash functional canary exercises the central immutable Bash
+reusable workflow against `bash-functional/`. Pull requests and pushes run only
+the passing scenario. Manual dispatch selects exactly one of success,
+ShellCheck failure, formatting failure, Bats failure, or caller-configuration
+bypass so each run receives its own identity-bound evidence artifact.
+
 ## Immutable workflow under test
 
 The workflow is pinned to:
