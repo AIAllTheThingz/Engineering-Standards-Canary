@@ -15,11 +15,12 @@ scenarios run only through a closed `workflow_dispatch` choice.
 
 The workflow is pinned to:
 
-`1ee830403569a7e59a5d193229cd19e210113c56`
+`6c0050de328ac083e69fbac8971a317689c2c1d6`
 
-That SHA is the Issue #21 correction candidate on Engineering Standards PR
-#36. It becomes authoritative only after protected review and
-merge. Moving branches, tags, shortened SHAs, and caller-selected standards
+That SHA is the Engineering Standards `1.2.0` release candidate validated by
+this canary. It becomes an authoritative released revision only after the
+required protected review, release approval, tag, and GitHub Release lifecycle
+complete. Moving branches, tags, shortened SHAs, and caller-selected standards
 references are not permitted.
 
 ## Validation
