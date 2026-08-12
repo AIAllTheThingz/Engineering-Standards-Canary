@@ -63,6 +63,31 @@ the exact sanitized diagnostic. Workflow logs alone are not acceptance evidence.
 At minimum, independently verify success and controlled-failure artifacts.
 Negative artifacts should also be inspected when retained.
 
+## Bash functional canary
+
+`.github/workflows/bash-functional-canary.yml` is a separate five-job caller of
+the immutable central Bash reusable workflow. Pull requests and pushes select
+only `success`; a manual dispatch selects exactly one scenario:
+
+- `success`: every functional phase passes.
+- `shellcheck-failure`: ShellCheck alone fails and Bats is `NotRun`.
+- `format-failure`: shfmt alone fails and Bats is `NotRun`.
+- `bats-failure`: syntax, ShellCheck, and shfmt pass before one Bats assertion fails.
+- `caller-config-bypass`: a caller `.shellcheckrc` tries to suppress an SC2034 finding that ShellCheck reads from governed source; trusted settings remain authoritative, ShellCheck fails, formatting passes, and Bats is `NotRun`.
+
+Run a scenario with:
+
+```powershell
+gh workflow run bash-functional-canary.yml --repo AIAllTheThingz/Engineering-Standards-Canary --ref <reviewed-ref> -f scenario=<scenario>
+```
+
+For each run, download the original `bash-evidence-<run-id>` ZIP and its GitHub
+artifact API metadata. Verify the extracted artifact with the candidate
+checkout's `scripts/Test-BashWorkflowEvidenceArtifact.ps1`, binding the caller
+commit, branch, run ID, artifact ID/name/digest, standards workflow SHA, ZIP
+SHA-256, expected conclusion, and expected failure phase. Logs without an
+independently verified artifact are not acceptance evidence.
+
 ## Candidate pin updates and release gate
 
 To test a candidate release, change the reusable-workflow reference only to the

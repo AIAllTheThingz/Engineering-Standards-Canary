@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "1.0.0",
+  "manifestPath": "project-manifest.json",
+  "evidencePath": "evidence",
+  "requiredDocumentationPaths": ["README.md", "AGENTS.md"],
+  "applicableAgentStandards": ["agents/AGENTS_Base.md", "agents/AGENTS_Bash.md"],
+  "validationCategories": ["Contract", "BashStaticAnalysis"],
+  "additionalForbiddenPatterns": [],
+  "reviewedAllowlist": [],
+  "controls": {"mandatoryControlsDisabled": []},
+  "exceptions": []
+}

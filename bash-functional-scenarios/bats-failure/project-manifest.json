@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectName": "bash-bats-failure",
+  "repository": "AIAllTheThingz/Engineering-Standards-Canary",
+  "description": "Synthetic downstream Bats assertion failure canary.",
+  "projectType": "bash",
+  "technologies": ["bash", "github-actions"],
+  "governanceVersion": "1.1.0",
+  "riskClassification": "Moderate",
+  "dataClassification": "Public",
+  "owners": ["aiallthethingz@gmail.com"],
+  "environments": [{"name": "canary", "type": "test", "production": false}],
+  "applicableStandards": ["agents/AGENTS_Base.md", "agents/AGENTS_Bash.md"],
+  "requiredWorkflows": ["bash"],
+  "externalIntegrations": [],
+  "secretsProvider": "none-required",
+  "productionApprovalRequired": false,
+  "evidence": {
+    "completionEvidencePath": "evidence/completion-result.json",
+    "testEvidencePath": "evidence/local-test-results.json"
+  },
+  "exceptions": []
+}
