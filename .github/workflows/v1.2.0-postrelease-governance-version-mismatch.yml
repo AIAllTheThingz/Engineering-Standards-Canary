@@ -1,0 +1,21 @@
+name: v1.2.0 PostRelease Canary - governance-version-mismatch
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - release/v1.2.0-postrelease-canary
+
+permissions:
+  contents: read
+
+jobs:
+  scenario:
+    name: Published-ref governance version mismatch
+    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/governance-ci-reusable.yml@v1.2.0
+    with:
+      project-path: .
+      governance-version: 1.0.0
+      artifact-retention-days: 30

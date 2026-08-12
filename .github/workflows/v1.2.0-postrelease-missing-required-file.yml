@@ -1,0 +1,21 @@
+name: v1.2.0 PostRelease Canary - missing-required-file
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - release/v1.2.0-postrelease-canary
+
+permissions:
+  contents: read
+
+jobs:
+  scenario:
+    name: Published-ref missing required file
+    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/governance-ci-reusable.yml@v1.2.0
+    with:
+      project-path: canary-scenarios/missing-required-file
+      governance-version: 1.1.0
+      artifact-retention-days: 30
