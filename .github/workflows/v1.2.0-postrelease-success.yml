@@ -1,6 +1,9 @@
 name: v1.2.0 PostRelease Canary - success
 
 on:
+  pull_request:
+    branches:
+      - main
   push:
     branches:
       - release/v1.2.0-postrelease-canary
