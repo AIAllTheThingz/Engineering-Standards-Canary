@@ -1,0 +1,45 @@
+name: Issue 103 Isolated Canary - Success
+
+on:
+  push:
+    branches:
+      - canary/issue-103-isolated-v121
+
+permissions:
+  contents: read
+
+jobs:
+  repository_shape:
+    name: Repository shape
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout canary
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+        with:
+          persist-credentials: false
+
+      - name: Prove central implementation directories are absent
+        shell: bash
+        run: |
+          set -euo pipefail
+          for forbidden in scripts actions tests examples; do
+            if git ls-tree -d -r --name-only HEAD |
+              awk -F/ -v name="${forbidden}" '$NF == name { found=1 } END { exit !found }'
+            then
+              echo "Forbidden copied central directory found: ${forbidden}" >&2
+              exit 1
+            fi
+          done
+          echo "No copied central implementation directories are present."
+
+  scenario:
+    name: Governance success
+    needs: repository_shape
+    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/governance-ci-reusable.yml@7d15ec8be6d8c3cdca35061728901584437e4a50
+    with:
+      project-path: .
+      governance-version: 1.1.0
+      artifact-retention-days: 30
