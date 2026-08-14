@@ -38,7 +38,7 @@ jobs:
   success:
     name: Governance success
     needs: repository_shape
-    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/governance-ci-reusable.yml@8ae6e8cbdf93332bff13dcc366723db61387d97f
+    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/governance-ci-reusable.yml@7d15ec8be6d8c3cdca35061728901584437e4a50
     with:
       project-path: .
       governance-version: 1.1.0
@@ -47,7 +47,7 @@ jobs:
   controlled_failure:
     name: Controlled failure
     needs: repository_shape
-    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/governance-ci-reusable.yml@8ae6e8cbdf93332bff13dcc366723db61387d97f
+    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/governance-ci-reusable.yml@7d15ec8be6d8c3cdca35061728901584437e4a50
     with:
       project-path: .
       governance-version: 1.1.0
@@ -57,7 +57,7 @@ jobs:
   governance_version_mismatch:
     name: Governance version mismatch
     needs: repository_shape
-    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/governance-ci-reusable.yml@8ae6e8cbdf93332bff13dcc366723db61387d97f
+    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/governance-ci-reusable.yml@7d15ec8be6d8c3cdca35061728901584437e4a50
     with:
       project-path: .
       governance-version: 1.0.0
@@ -66,7 +66,7 @@ jobs:
   missing_required_file:
     name: Missing required file
     needs: repository_shape
-    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/governance-ci-reusable.yml@8ae6e8cbdf93332bff13dcc366723db61387d97f
+    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/governance-ci-reusable.yml@7d15ec8be6d8c3cdca35061728901584437e4a50
     with:
       project-path: canary-scenarios/missing-required-file
       governance-version: 1.1.0
@@ -75,7 +75,7 @@ jobs:
   mandatory_control_disablement:
     name: Mandatory control disablement
     needs: repository_shape
-    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/governance-ci-reusable.yml@8ae6e8cbdf93332bff13dcc366723db61387d97f
+    uses: AIAllTheThingz/Engineering-Standards/.github/workflows/governance-ci-reusable.yml@7d15ec8be6d8c3cdca35061728901584437e4a50
     with:
       project-path: canary-scenarios/mandatory-control-disablement
       governance-version: 1.1.0
