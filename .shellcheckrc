@@ -1,0 +1,2 @@
+# Deliberate caller suppression: trusted ShellCheck must ignore this file.
+disable=SC2154

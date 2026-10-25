@@ -1,0 +1,6 @@
+# Deliberate caller suppression: trusted Ruff must ignore this configuration.
+[tool.ruff]
+exclude = ["**"]
+
+[tool.ruff.lint]
+ignore = ["F821"]

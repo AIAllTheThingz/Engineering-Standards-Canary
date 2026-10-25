@@ -32,6 +32,28 @@ See [Canary Operations](docs/CANARY_OPERATIONS.md) for success, controlled
 failure, negative scenarios, evidence verification, pin rotation, rollback, and
 release-gate procedures.
 
+## Additional static acceptance for PR #128
+
+The root Python and Bash files are synthetic, inert caller data. They are valid
+for static analysis and deliberately fail if executed. The trusted reusable
+workflow must analyze them without running them. This proof targets Linux static
+analysis with Ruff 0.17.1 and ShellCheck 0.11.0; it makes no functional or
+cross-platform execution claim.
+
+The normal pull-request run must pass both language validators. Two isolated
+manual-only branches each alter one source file: one introduces undefined Python
+name F821 with a noqa suppression, and one removes a Bash assignment to trigger
+SC2154. The caller-owned Ruff configuration excludes all files and ignores F821;
+the ShellCheck configuration disables SC2154. Trusted validation must ignore
+those suppressions and reject the corresponding source while the other language
+and Contract still pass. Each negative uses the existing `success` dispatch
+choice against intentionally invalid caller data; no default branch or normal
+pull-request fixture is changed. No caller source is executed.
+
+Run, caller commit, artifact and hash records are maintained in the draft canary
+pull request. The five separate Contract/interface scenarios remain recorded in
+Canary PR #8 against the same immutable standards candidate.
+
 ## Ownership and limitations
 
 Engineering Standards maintainers own the canary. It validates the GitHub.com
