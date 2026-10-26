@@ -15,7 +15,7 @@ scenarios run only through a closed `workflow_dispatch` choice.
 
 The workflow is pinned to:
 
-`221932b76585c0867ad32973a908cde825a0a650`
+`daf71d330e30b4f8cda02e85191e023cd2bade3b`
 
 That SHA is the exact validator candidate approved for testing in Engineering
 Standards PR #125. This branch records acceptance evidence for its self-CI
