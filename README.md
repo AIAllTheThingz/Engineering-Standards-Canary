@@ -15,12 +15,12 @@ scenarios run only through a closed `workflow_dispatch` choice.
 
 The workflow is pinned to:
 
-`6c0050de328ac083e69fbac8971a317689c2c1d6`
+`7d15ec8be6d8c3cdca35061728901584437e4a50`
 
-That SHA is the Engineering Standards `1.2.0` release candidate validated by
-this canary. It becomes an authoritative released revision only after the
-required protected review, release approval, tag, and GitHub Release lifecycle
-complete. Moving branches, tags, shortened SHAs, and caller-selected standards
+That SHA is the immutable commit of the already-published Engineering Standards
+`v1.2.1` release. All five acceptance calls use this exact revision. These runs
+validate the released commit as a downstream consumer; they do not replace the
+separate published-tag PostRelease certificate. Moving branches, tags, shortened SHAs, and caller-selected standards
 references are not permitted.
 
 ## Validation
@@ -32,6 +32,15 @@ proves that prohibited central implementation directories are absent.
 See [Canary Operations](docs/CANARY_OPERATIONS.md) for success, controlled
 failure, negative scenarios, evidence verification, pin rotation, rollback, and
 release-gate procedures.
+
+Only the success case runs for normal pull requests and pushes to `main`.
+The four deliberate failures remain isolated choices in the existing closed
+manual dispatcher. Their failed conclusions are accepted only when the
+downloaded evidence proves the exact intended reason.
+
+The [historical v1.2.0 record](.github/postrelease-canary-v1.2.0.md) retains the
+failed annotated-tag observation. The immutable `v1.2.1` acceptance runs do not
+relabel that older release as passing or modify either published tag.
 
 ## Ownership and limitations
 
