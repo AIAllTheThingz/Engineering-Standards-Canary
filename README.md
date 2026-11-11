@@ -15,7 +15,7 @@ scenarios run only through a closed `workflow_dispatch` choice.
 
 The workflow is pinned to:
 
-`6c0050de328ac083e69fbac8971a317689c2c1d6`
+`40a6ca49f4f00d1dbc98e7687b9b5fefa3a06469`
 
 That SHA is the Engineering Standards `1.2.0` release candidate validated by
 this canary. It becomes an authoritative released revision only after the
